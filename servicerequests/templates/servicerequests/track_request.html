@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Service Request</title>
+</head>
+<body>
+    <h1>Track Service Request</h1>
+    <p>Type: {{ request.type }}</p>
+    <p>Details: {{ request.details }}</p>
+    <p>Status: {{ request.status }}</p>
+    <p>Submitted at: {{ request.submitted_at }}</p>
+    {% if request.status == 'Resolved' %}
+        <p>Resolved at: {{ request.resolved_at }}</p>
+    {% endif %}
+    <br>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

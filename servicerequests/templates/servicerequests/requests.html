@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Service Requests</title>
+</head>
+<body>
+    <h1>All Service Requests</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Details</th>
+                <th>Status</th>
+                <th>Submitted At</th>
+                <th>Resolved At</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for request in all_requests %}
+            <tr>
+                <td>{{ request.type }}</td>
+                <td>{{ request.details }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.submitted_at }}</td>
+                <td>{{ request.resolved_at }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'home' %}">Back to home</a>
+</body>
+</html>

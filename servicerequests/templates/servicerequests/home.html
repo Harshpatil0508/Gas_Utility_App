@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Gas Utility Consumer Services</h1>
+    <ul>
+        <li><a href="{% url 'submit_request' %}">Submit a Request</a></li>
+        <br>
+        <li>
+            <form action="{% url 'track_request_by_id' %}" method="post">
+                {% csrf_token %}
+                <label for="request_id">Track a Request by ID:</label><br><br>
+                <input type="text" id="request_id" name="request_id" required>
+                <button type="submit">Track</button>
+            </form>
+        </li>
+        <br>
+        <li><a href="{% url 'all_requests' %}">View All Requests</a></li>
+        <br>
+    </ul>
+</body>
+</html>
